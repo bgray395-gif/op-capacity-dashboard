@@ -1,0 +1,59 @@
+timezone: America/New_York
+refresh_hour: 6
+refresh_minute: 0
+pipelines:
+  - key: TCO
+    name: Columbia Gas Transmission (TCO)
+    source_url: https://ebb.tceconnects.com/infopost/OperationalOverview.aspx?assetid=51&v=1.1
+    sections:
+      - name: TCO Capacity
+        points: ["842867", "CERELANH", "CERELANW", "640313", "K2", "642824"]
+      - name: Williams Ohio Valley Capacity
+        points: ["643129"]
+  - key: EGT
+    name: Eastern Gas Transmission and Storage
+    source_url: https://infopost.bhegts.com/egts/postings/capacity-operationally-available
+    sections:
+      - name: Williams Ohio Valley Capacity
+        points: ["EB760"]
+      - name: EGT TL-360 Capacity
+        points: ["EB095", "EB360", "EB720", "EB745", "40229", "40411"]
+      - name: EGT TL-413 Capacity
+        points: ["EB490", "EB560", "EB565", "EB605", "EB610", "EB615", "EB645", "EB655", "EB660", "EB775", "41010", "P0001", "P0002", "P0004", "P0005"]
+  - key: TETCO
+    name: Texas Eastern Transmission
+    source_url: https://infopost.enbridge.com/infopost/TEHome.asp?Pipe=TE
+    sections:
+      - name: Williams Ohio Valley Capacity
+        points: ["73656"]
+  - key: NEXUS
+    name: NEXUS Gas Transmission
+    source_url: https://infopost.enbridge.com/infopost/NXUSHome.asp?Pipe=NXUS
+    sections:
+      - name: Williams Ohio Valley Capacity
+        points: ["N4656"]
+  - key: EQM
+    name: Equitrans Midstream
+    source_url: https://infopost.eqt.com/CustomerPortal/operationally-available?c__tspNumber=189569585
+    sections:
+      - name: EQM Capacity
+        points: ["24577", "24624", "24479", "5100117", "M5514773", "M5209978", "M5436771", "PLASMA_OVC", "18120"]
+  - key: NFGS
+    name: National Fuel Gas Supply
+    source_url: https://informationalpostings.natfuel.com/infopostdashboard/dashboard.aspx?pipeline=supply
+    sections:
+      - name: NFGS Capacity
+        names:
+          - CONCORD STA  S to N
+          - YM-53 S TO N
+          - YM-52 S TO N
+          - LEWIS RUN S to N
+          - TGP - Roselake
+          - TGP - Lamont
+          - TRANSCO - Leidy Transco
+          - NFGSC - Excess Injection
+
+display_groups:
+  - section: EQM Capacity
+    label: Statler through Valley Chapel
+    points: ["24577", "24624", "24479", "5100117", "M5514773", "M5209978", "M5436771"]
